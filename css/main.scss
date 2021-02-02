@@ -1,0 +1,2929 @@
+@charset "UTF-8";
+html, body{
+    overflow-x: hidden;
+}
+/*메뉴고정*/
+.mFixedMainMenu{/*모바일일때 메뉴 픽시드*/
+    position: fixed !important;
+
+}
+.fixedMainMenu{
+    position: fixed !important;
+    top: 0;
+    height: 60px !important;
+    padding: 10px 0 0 0 !important;
+    background-color: #fff;
+    .logo{
+        background-image: url("../images/logo.png") !important;
+        width: 60px !important;
+        height: 50px !important;
+        background-size: cover;
+    }
+    .mainMenu{
+        line-height: 50px !important;
+        a{
+            span{
+                color:rgba(0,0,0, 0.3) !important;
+                &:hover{
+                    color: #222222 !important;                                
+                }
+                &::after{
+                    margin-top: -10px !important;
+                }
+            }            
+        }
+    }
+}
+/*서브메뉴고정*/
+.fixedSubeMenu{
+    position: fixed;
+    height: 50px !important;
+    top: 70px;
+    z-index: 900;
+    li{
+        height: 50px !important;
+        line-height: 50px !important;
+    }
+}
+
+#wrap{
+    width: 100%;
+    margin: 0 auto;
+    /*헤더영역*/
+    header{
+        position: absolute;
+        padding: 36px 0 0 0;
+        width: 100%;
+        height: 84px;
+        z-index: 1000;
+        .header{
+            margin: 0 auto;            
+            width: 1200px;
+            height: 84px;
+            .logo{
+                display: inline-block;
+                width: 70px;
+                height: 60px;
+                line-height: 110px;
+                background-image: url("../images/logo_1.png");
+                background-repeat: no-repeat;
+                a{
+                    display: block;
+                    width: 100%;
+                    height: 60px;
+                }
+            } 
+            /*메인메뉴*/
+            .mainNav{
+                float: right;
+                width: 80%;
+                height: 60px;
+                .mainMenu{
+                    float: right;                  
+                    line-height: 60px;
+                    li{
+                        position: relative;
+                        float: left;
+                        padding-right: 40px;                    
+                        &:last-child{
+                            padding-right: 0;
+                        }
+                        a{
+                            position: relative;
+                            display: inline-block;
+                            span{
+                                position: relative;
+                                color: rgba(255,255,255, 0.7);
+                                font-size: 16px;
+                                font-weight: 600;
+                                &::after{
+                                    display:block;
+                                    content: '';
+                                    margin-top: -15px;
+                                    border-bottom: solid 3px #cd2026;  
+                                    transform: scaleX(0);  
+                                    transition: transform 350ms ease-in-out;
+                                }
+                                &:hover{
+                                color: #fff;                                
+                                    &::after{
+                                        transform: scaleX(1);
+                                    }
+                                }
+                            }
+                            .clickCss{
+                                &::after{
+                                    transform: scaleX(1);
+                                }
+                            }                            
+                        }                
+                    }
+                }
+                .mobileMainMenu{
+                    display: none;
+                    width: 100%;
+                    float: none;                  
+                    line-height: 60px;                        
+                    background-color:#fff;
+                    border-bottom: 2px solid #e6e6e6;
+                    >li{                        
+                        &:first-child{
+                            border-top: 1px solid #e6e6e6;
+                        }                           
+                    }
+                    li{
+                        float: none;           
+                        a{
+                            display:block;
+                            padding:0 25px;
+                            width: 100%;
+                            height: 100%;
+                            position: relative;                                
+                            font-size: 16px;
+                            font-weight: 600;
+                            transition: 0.3s;
+                            &::after{
+                                content: "";
+                            }
+                            span{
+                                color: #333333;
+                                &:hover{
+                                    color: #cd2026;
+                                    &::after{
+                                        width:0;
+                                    }
+                                }
+                            }
+                        }
+                        .mobileSubMenu{
+                            display: none;
+                            li{
+                                a{
+                                    span{
+                                        color: #333333;
+                                    }
+                                }
+                            }
+                        }
+                    }  
+                }         
+            }
+            .mobileMenuIcon{
+                display: none;                
+            }      
+        }    
+    }
+    /*메인 이미지영역*/
+    .backgroundImg{
+        width: 100%;
+        height: 800px;
+        color:#fff;
+        background-image: url("../images/background_img.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center 0;
+        .backgroundImgContent{           
+            margin: 0 auto;            
+            width: 1200px;
+            height: 800px;
+            .mainContentArea{
+                padding: 156px 0;
+                margin: 0 auto;
+                width: 100%;
+                height: 320px;
+                .mainTextBox{
+                    padding-top: 20px;
+                    margin: 0 auto;
+                    width: 540px;
+                    height: 200px;
+                    h1{
+                        font-size: 38.5px;
+                        .software{
+                            display: block;
+                            text-align: center;
+                            font-size: 55px;
+                        }
+                    }
+                    p{
+                        text-align: center;
+                        font-size: 20px;
+                        line-height: 50px;
+                    }
+                }
+                .mainIconImgBox{                    
+                    .mainIconImg{
+                        position: absolute;
+                        width: 1200px;
+                        height: 360px;
+                    }
+                    .active{
+                        z-index: 1;
+                    }
+                }               
+            }    
+        }
+    }
+    /*서브메뉴*/
+    .subMenuWrap{
+        width: 100%;
+        height: 60px;
+        .subMenu{
+            width: 100%;
+            height: 60px;
+            background-color: #333333;
+           //background-color: #141414;
+            .subMenuContainer{
+                margin: 0 auto;
+                width: 1200px;
+                height: 60px;
+                .row{
+                    .subMenuContent{
+                        width: 100%;
+                        li{
+                            width: 33.33333%;
+                            float: left;
+                            text-align: center;
+                            line-height: 60px;
+                            a{
+                                display: inline-block;
+                                position: relative;
+                                span{
+                                    position:relative;
+                                    padding:10px;
+                                    transition:0.5s color ease;
+                                    font-size: 16px;
+                                    color: #fff;
+                                    font-weight: 700;
+                                    &::before{
+                                        top: 0.4em;
+                                        right:0;
+                                        content: "";
+                                        height:0.1rem;
+                                        width:0;
+                                        background: #fff;
+                                        transition:0.5s all ease;
+                                        position:absolute;
+                                    }
+                                    &::after{
+                                        bottom: 0.4em;
+                                        left:0;
+                                        content: "";
+                                        height:0.1rem;
+                                        width:0;
+                                        background: #fff;
+                                        transition:0.5s all ease;
+                                        position:absolute;
+                                    }
+                                    &:hover::before{
+                                        width: 100%;
+                                    }
+                                    &:hover::after{
+                                        width: 100%;
+                                    }
+                                }                                
+                            }
+                        }
+                    }
+                }
+            }        
+        }
+    }
+    /* 공통섹션영역 배경색상*/    
+    .contentWrapBgc{
+        background-color: #f2f2f2 !important;
+        z-index: -2;
+    }
+    .pdNone{ padding-bottom: 0px !important;}/* 공통섹션영역에서 padding-bottom 없애기*/
+    .contentWrap{ /* section 영역(공통)*/   
+        width: 100%;
+        height: auto;
+        padding-bottom: 200px;
+        .contentContainer{
+            margin: 0 auto;
+            width: 1200px;
+            height: auto;
+            .row{
+                .titleContainerH{/*서브컨텐츠 타이틀 하단 여백 줄이기*/
+                    height: 90px !important;
+                }
+                .titleContainer{    /*서브컨텐츠 타이틀(공통)*/
+                    padding-top: 150px;
+                    width: 100%;
+                    height: 200px;
+                    .articleTitle{
+                        text-align: center;
+                        line-height: 100px;
+                        font-size: 50px;
+                        font-weight: 400;
+                        color:#444444;
+                        &::after{
+                            display: block;
+                            margin: auto;                                
+                            content: "";
+                            width: 200px;
+                            height: 3px;
+                            background: #cd2026;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*----------------------------회사소개--------------------------------------*/
+    .companyIntroductionWrap{                
+        .companyOverview{     /*회사개요*/
+            .companyOverviewContent{
+                display: table;                        
+                width: 100%;
+                height: 400px;                        
+                img{
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 600px;
+                    height: 400px;
+                    border-radius: 10px;
+                    box-shadow: 10px 10px 5px 0px rgba(0,0,0, 0.3);
+                }
+                p{
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 550px;
+                    height: 400px;
+                    line-height: 40px;
+                    span{
+                        display: block;
+                        padding-bottom: 20px;
+                        margin-top: -50px;
+                        color: #999999;
+                        font-size:30px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        .companyVision{     /*회사비전*/                    
+            .companyVisionContent{
+                display: table;   
+                margin: 0 auto;                     
+                width: 1200px;
+                height: 650px;                        
+                .visionList{
+                    display: table-cell;
+                    vertical-align: middle;
+                    padding-top: 30px;
+                    width: 40%;
+                    height: 620px;
+                    line-height: 25px;                    
+                    li{
+                        font-size: 25px;
+                        color: #b9191f;
+                        font-weight: 700;
+                        &::before{
+                            display: inline-block;
+                            margin: 0 15px 6px 0;
+                            content:"";
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 4px;
+                            background-color: #b9191f;
+                        }
+                        p{
+                            margin: 30px 0 70px 24px;
+                            font-size: 16px;
+                            color: #222222;
+                            font-weight: 400;
+                            span{
+                                display: block;
+                                line-height: 40px;
+                            }                                   
+                        }
+                    }
+                }                        
+                img{
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 100%;
+                    height: 650px;
+                }
+            }
+        }
+        
+        .companyHistory{     /*회사히스토리*/                    
+            .companyHistoryContent{
+                display: table;   
+                margin: 0 auto;                     
+                width: 1200px;
+                height: 650px;                        
+            }
+        }
+        
+        .companyContactUs{     /*회사연락*/
+            .companyContactUsContent{
+                .mapBox{
+                    width: 100%;
+                    height: 300px;
+                    background-image: url("../images/map.png");
+                    background-size: cover;
+                    background-position: 0 50%;
+                }
+                .directions{                   
+                    padding: 20px 0 70px 0;
+                    width: 100%;
+                    height: auto;
+                    line-height: 30px;                    
+                    li{
+                        position: relative;
+                        font-weight: 700;
+                        .transportation{
+                            position: absolute;
+                            top: 0;
+                            left:50px;
+                            padding-top: 40px;
+                            display: inline-block;
+                        }
+                        p{
+                            padding-top: 15px;
+                            font-weight: 400;
+                        }
+                        .subwayIcon{
+                            padding-top: 40px;
+                            display: inline-block;
+                            font-size: 30px;
+                            color:#2521c1;
+                        }
+                        .busIcon{
+                            padding-top: 40px;
+                            display: inline-block;
+                            font-size: 30px;
+                            color:#3eba44;
+                        }
+                    }                                    
+                }
+            }
+        }
+
+        .Contact{/*회사연락 이미지부분*/
+            display: table;
+            width: 100%;
+            height: 300px;
+            background-image: url("../images/inquiry_background.jpg");
+            background-size: cover;
+            p{
+                display: table-cell;
+                vertical-align: middle;
+                font-size: 20px;
+                color:#fff;
+                font-weight: 700;
+                line-height: 50px;
+                text-align: center;
+            }
+        }
+
+
+    }
+    
+    /*----------------------------회사연혁--------------------------------------*/
+    .historyWrap{
+        display: none;
+        width: 100%;
+        height: auto;
+        .companyHistory{                 
+            .companyHistoryContent{                           
+                margin: 0 auto;                     
+                width: 1200px;
+                height: auto;
+                //background-color: peachpuff;                       
+                .historyList{
+                    .historyListBgc{ /*히스토리 홀수번째 배경*/
+                        &::before{
+                            content: "";
+                            z-index: -1;
+                            background-color: #f2f2f2;
+                            position: absolute;
+                            left: 50%;
+                            top: 0px;
+                            margin-left: -50vw;
+                            height: 100%;
+                            width: 100vw;
+                        }
+                        .backNum{
+                            color: #e5e5e5 !important;
+                        }
+                    } 
+
+                    .historyListContent{
+                        position: relative;
+                        padding: 70px 0;
+                        &::after{
+                            display: block;
+                            content: "";
+                            clear: both;                           
+                        }                     
+                        .postedDate{
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            margin-top:-33px;                            
+                            width: 43%;
+                            height: 66px;                            
+                            font-weight: 700;
+                            .backNum{ /* 히스토리 뒷 배경숫자*/
+                                position: absolute;
+                                left: 0px;
+                                top: -180px;
+                                font-size: 200px;
+                                font-weight: 800;
+                                color: #f2f2f2;
+                                z-index: 100; 
+                            } 
+                            .year{
+                                position: absolute;
+                                left: 0;
+                                top: 0px;
+                                width: 100%;
+                                text-align: center;
+                                font-size: 50px;
+                                z-index: 500;                               
+                            }
+                        }
+                        .monthTable{
+                            padding: 30px 0;
+                            float: right;
+                            width: 53%;
+                            text-align: left;
+                            .monthList{
+                                dl{
+                                    line-height: 40px;
+                                    .month{
+                                        float: left;
+                                        margin-right: 20px;
+                                        font-size: 20px;
+                                        font-weight: 700;
+                                    }
+                                    dd{
+                                        float: left;
+                                        font-size: 14px;
+                                    }
+                                    &::after{
+                                        content: "";
+                                        clear: both;
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }                      
+                    }
+                }                        
+            }
+        } 
+    }
+
+    /*----------------------------사업분야--------------------------------------*/
+    .businessFieldWrap{
+        display: none;
+        /*모바일 홈네트워트 서비스*/
+        .mobileHomeNetwork{                     
+            .mobileHomeNetworkContent{                                          
+                margin: 0 auto;                     
+                width: 1200px;
+                height: auto;
+                .description{
+                    position: relative;
+                    height: 250px;
+                    &::after{
+                        content: "";                       
+                        position: absolute;
+                        left: 50%;
+                        top: 0px;
+                        margin-left: -50vw;
+                        width: 100vw;
+                        height: 100%;
+                        background-image: url("../images/mobileHomeNetwork.jpg");
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        z-index: -1;
+                    }
+                    p{                        
+                        padding-top: 90px;
+                        color:#fff;
+                        font-size: 20px;
+                        font-weight: 700;
+                        line-height: 35px;
+                    }
+                }
+                .mobileHomeNetworkWay{
+                    .homeNetworList{
+                        padding: 40px;
+                        background-color: #fff;
+                        box-shadow: 0px 2px 5px #cfcece;
+                        border-radius: 10px;
+                        border: 1.5px solid #e2dfdf;
+                        &:nth-child(1){
+                            margin-top:100px;
+                            margin-bottom: 50px;
+                            width: 42%;
+                            height: 200px;
+                            float: left;
+                        }
+                        &:nth-child(2){
+                            margin-top:100px;
+                            margin-bottom: 50px;
+                            width: 42%;
+                            height: 200px;
+                            float: right;
+                        }                           
+                        &:last-child{
+                            clear: both;
+                        }
+                        .homeNetworListContent{
+                            h3{
+                               margin-bottom: 30px;
+                               color: #b9191f;
+                               font-size: 22px;
+                            }
+                            .developmentItem{ /*개발항목*/
+                                li{
+                                    line-height: 35px;
+                                }
+                            }
+                            .developmentEnvironment{ /*개발환경*/
+                                li{
+                                    line-height: 35px;
+                                    }
+                            }                            
+                            .reference{ /*주요 레퍼런스*/
+                                li{
+                                    position: relative;
+                                    padding-left: 30px;
+                                    line-height: 40px;
+                                    &::before{
+                                        position: absolute;
+                                        top: 17px;
+                                        left: 0;
+                                        content: "";
+                                        width: 5px;
+                                        height: 5px;
+                                        background-color: #b9191f;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }                                           
+            }
+        } 
+
+        /*모바일 소프트웨어개발*/
+        .mobileSoftware{                     
+            .mobileSoftwareContent{                                          
+                margin: 0 auto;                     
+                width: 1200px;
+                height: auto;
+                .description{
+                    position: relative;
+                    height: 250px;
+                    &::after{
+                        content: "";                       
+                        position: absolute;
+                        left: 50%;
+                        top: 0px;
+                        margin-left: -50vw;
+                        width: 100vw;
+                        height: 100%;
+                        background-image: url("../images/mobileSoftware.jpg");
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        z-index: 1;
+                    }
+                    p{    
+                        position: relative;              
+                        padding-top: 90px;
+                        color:#fff;
+                        font-size: 20px;
+                        font-weight: 700;
+                        line-height: 35px;
+                        z-index: 10;
+                    }
+                }
+                .mobileSoftwareWay{
+                    .softwarList{
+                        padding: 40px;
+                        background-color: #fff;
+                        box-shadow: 0px 2px 5px #cfcece;
+                        border-radius: 10px;
+                        border: 1.5px solid #e2dfdf;
+                        &:nth-child(1){
+                            margin-top:100px;
+                            margin-bottom: 50px;
+                            width: 42%;
+                            height: 200px;
+                            float: left;
+                        }
+                        &:nth-child(2){
+                            margin-top:100px;
+                            margin-bottom: 50px;
+                            width: 42%;
+                            height: 200px;
+                            float: right;
+                        }                           
+                        &:last-child{
+                            clear: both;
+                        }
+                        .softwarListContent{
+                            h3{
+                               margin-bottom: 30px;
+                               color: #b9191f;
+                               font-size: 22px;
+                            }
+                            .developmentItem{ /*개발항목*/
+                                li{
+                                    line-height: 35px;
+                                }
+                            }
+                            .developmentEnvironment{ /*개발환경*/
+                                li{
+                                    line-height: 35px;
+                                    }
+                            }                            
+                            .reference{ /*주요 레퍼런스*/
+                                li{
+                                    position: relative;
+                                    padding-left: 30px;
+                                    line-height: 40px;
+                                    &::before{
+                                        position: absolute;
+                                        top: 17px;
+                                        left: 0;
+                                        content: "";
+                                        width: 5px;
+                                        height: 5px;
+                                        background-color: #b9191f;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }                                           
+            }
+        } 
+    }
+
+    /*------------------------------솔루션--------------------------------------*/
+    .solutionWrap{
+        display: none;
+        /*모바일 홈네트워트 솔루션*/
+        .mobileHomeNetSolution{                     
+            .mobileHomeNetSolutionContent{                                          
+                margin: 0 auto;                     
+                width: 1200px;
+                height: auto;
+                .solutionOutline{
+                    padding: 0 0 50px 0;
+                    margin-bottom: 50px;
+                    h3{
+                        font-size: 30px;
+                        color: #B9191F;
+                        margin-bottom: 40px;
+                    }
+                    ul{
+                        padding: 50px 40px;
+                        background-color: #f2f2f2;
+                        li{
+                            position: relative;
+                            padding-left: 20px;
+                            line-height: 40px;
+                            &::before{
+                                position: absolute;
+                                top: 17px;
+                                left: 0;
+                                content: "";
+                                width: 5px;
+                                height: 5px;
+                                border-radius: 2.5px;
+                                background-color: #b9191f;
+                            } 
+                        }
+                    }
+                }
+                .solutionFunction{
+                    padding: 60px 0;
+                    h3{
+                        font-size: 30px;
+                        color: #B9191F;
+                        margin-bottom: 40px;                        
+                    }
+                    ul{
+                        li{
+                            float: left;
+                            width: 50%;                            
+                            .marginBox{
+                                height: 200px;                               
+                                .functionTitel{
+                                    position: relative;
+                                    padding-left: 80px;
+                                    padding-top: 30px;
+                                    padding-bottom: 40px;
+                                    display: inline-block;                                    
+                                    font-size: 18px;
+                                    font-weight: 700;
+                                    &::before{
+                                        position: absolute;
+                                        top: 5px;
+                                        left: 0;
+                                        content: "";
+                                        display: inline-block;
+                                        width: 60px;
+                                        height: 60px;                                       
+                                        background-size: cover;
+                                        background-repeat: no-repeat;
+                                    }
+                                }
+                                p{
+                                    span{
+                                        display: block;
+                                    }
+                                }
+                            }
+
+                            &:nth-child(1) .functionTitel::before{
+                                background-image: url("../images/solutionIcon1.png");
+                            }
+                            &:nth-child(2) .functionTitel::before{
+                                background-image: url("../images/solutionIcon2.png");
+                            }
+                            &:nth-child(3) .functionTitel::before{
+                                background-image: url("../images/solutionIcon3.png");
+                                background-position-x: -2px;
+                            }
+                            &:nth-child(4) .functionTitel::before{
+                                background-image: url("../images/solutionIcon4.png");
+                            }
+                        }
+                        &::after{
+                            content: "";
+                            display: block;
+                            clear: both;
+                        }
+                    }
+                }
+                .compositionDiagram{
+                    padding: 40px 0;
+                    h3{
+                        font-size: 30px;
+                        color: #B9191F;
+                        margin-bottom: 40px;
+                    }
+                    img{
+                        width: 100%;
+                        margin-top: 50px;
+                    }
+                }
+            }    
+        }
+        /*스마트 캠 솔루션*/
+        .smartCamSolution{                     
+            .smartCamSolutionContent{                                          
+                margin: 0 auto;                     
+                width: 1200px;
+                height: auto;
+                .solutionOutline{
+                    padding: 0 0 50px 0;
+                    margin-bottom: 50px;
+                    h3{
+                        font-size: 30px;
+                        color: #B9191F;
+                        margin-bottom: 40px;
+                    }
+                    ul{
+                        padding: 50px 40px;
+                        background-color: #fff;
+                        li{
+                            position: relative;
+                            padding-left: 20px;
+                            line-height: 40px;
+                            &::before{
+                                position: absolute;
+                                top: 17px;
+                                left: 0;
+                                content: "";
+                                width: 5px;
+                                height: 5px;
+                                border-radius: 2.5px;
+                                background-color: #b9191f;
+                            } 
+                        }
+                    }
+                } 
+                .applicationSpecifications{
+                    padding: 50px 0;
+                    h3{
+                        font-size: 30px;
+                        color: #B9191F;
+                        margin-bottom: 40px;
+                    }
+                    ul{ 
+                        margin-left: -15px;
+                        margin-right: -15px;
+                        line-height: 25px;                  
+                        li{
+                            float: left;
+                            width: 25%;                            
+                            .contetnBoxRow{
+                                padding: 0 15px;
+                                .contentBoxCol{
+                                    padding: 35px 35px 35px 35px;
+                                    height: auto;
+                                    .applicationSpecificationsTitle{
+                                        display: block;
+                                        padding-top: 40px;
+                                        padding-bottom: 30px;
+                                        font-size: 20px;
+                                        font-weight: 700;
+                                    }
+                                    span{
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                        &::after{
+                            content: "";
+                            display: block;
+                            clear: both;
+                        }
+                    }
+                }
+                .compositionDiagram{
+                    padding: 50px 0;
+                    margin-bottom: 50px;
+                    h3{
+                        font-size: 30px;
+                        color: #B9191F;
+                        margin-bottom: 40px;
+                    }
+                    img{
+                        display: block;
+                        margin: 60px auto;
+                        width: 100%;
+                    }
+                    .compositionDiagramText{
+                        ul{
+                            li{
+                                float: left;
+                                width: 575px;
+                                border-radius: 5px;
+                                background-color: #fff;
+                                .compositionDiagramTextWrap{                                    
+                                    .col{
+                                        padding: 40px;
+                                        .description{
+                                            display: block;
+                                            height: 85px;
+                                            color: #5e5e5e;
+                                            font-weight: 700;
+                                            text-align: center;
+                                            line-height: 30px;
+                                            border-bottom: 1px solid #eeeeee;
+                                        }
+                                        p{                                            
+                                            padding-top: 30px;
+                                            line-height: 35px;
+                                            span{                                                
+                                                display: block;
+                                                font-size: 14px;
+                                            }
+                                        }
+                                    }
+                                }
+                                &:first-child{
+                                    margin-right: 50px;
+                                }
+                            }
+                            &::after{
+                                content: "";
+                                display: block;
+                                clear: both;
+                            }
+                        }
+                    } 
+                }
+                .solutionFunction{
+                    padding: 50px 0;
+                    margin-bottom: 50px;
+                    h3{
+                        font-size: 30px;
+                        color: #B9191F;
+                        margin-bottom: 80px;
+                    }
+                    table{
+                        width: 100%;
+                        vertical-align: top;
+                        border-collapse: collapse;line-height: 1.5;
+                        border-top: 1px solid #ccc;
+                        border-bottom: 1px solid #ccc;                                                
+                        thead{                        
+                            th{
+                                padding: 10px;
+                                color:#fff;
+                                background-color: #5e5e5e;                          }
+                        }
+                        tbody{
+                            th{
+                                border-top: 1px solid #ccc;
+                                border-bottom: 1px solid #ccc;
+                                border-right: 1px solid #ccc;
+                                color: #5e5e5e;
+                            }
+                            td{
+                                width: 350px;
+                                padding: 10px;
+                                vertical-align: top;
+                                border-top: 1px solid #ccc;
+                                border-bottom: 1px solid #ccc;
+                                color: #5e5e5e;
+                            }
+                            .vam{
+                                vertical-align: middle;
+                                text-align: center;
+                                border-right: 1px solid #ccc;                                 
+                            }
+                            .bdB{
+                                border-bottom: 2px solid #ccc;
+                            }
+                        }
+                    }
+                }
+                .applicationField{
+                    padding: 50px 0;
+                    margin-bottom: 50px;
+                    h3{
+                        font-size: 30px;
+                        color: #B9191F;
+                        margin-bottom: 40px;
+                    }
+                    ul{
+                        margin-left: -15px;
+                        margin-right: -15px;
+                        li{
+                            width: 33.33333%;
+                            float: left;
+                            .applicationFieldWrap{
+                                padding: 0 15px;
+                               .col{
+                                    padding: 30px 0 0 0;
+                                    h4{
+                                        position: relative;
+                                        padding-left: 100px;
+                                        padding-bottom: 30px;
+                                        height: 80px;
+                                        line-height: 80px;
+                                        font-size: 20px;
+                                        &::before{
+                                            position: absolute;
+                                            left: 0;
+                                            top: 0;
+                                            content: "";
+                                            width: 80px;
+                                            height: 80px;
+                                            display:inline-block;
+                                            background-size: cover;
+                                            background-repeat: no-repeat;
+                                        }
+                                    }
+                                    span{                                        
+                                        display: block;
+                                        height: 40px;
+                                        font-size: 14px;
+                                    }
+                               }
+                            }
+                            &:nth-child(1) h4::before{
+                                left: 50px;
+                                background-image: url("../images/remoteMonitoring.png");
+                            }
+                            &:nth-child(2) h4::before{
+                                left: 25px;
+                                background-image: url("../images/promotion.png");
+                            }
+                            &:nth-child(3) h4::before{
+                                left: 60px;
+                                background-image: url("../images/relayBroadcasting.png");
+                            }   
+                        }
+                        &::after{
+                            content: "";
+                            display: block;
+                            clear: both;
+                        }    
+                    }
+                }
+            }
+        }
+        
+        /*스마트 공공시설 현장조사/안전진단 솔루*/
+        .smartPublicFacilitiesFieldSurveySafetyDiagnosis{                     
+            .smartPublicFacilitiesFieldSurveySafetyDiagnosisContent{                                          
+                margin: 0 auto;                     
+                width: 1200px;
+                height: auto;
+                .bigTopicContent{
+                    padding: 0 0 50px 0;
+                    margin-bottom: 50px;
+                    h3{
+                        font-size: 30px;
+                        color: #B9191F;
+                        margin-bottom: 40px;
+                    }
+                    h4{
+                        font-size: 20px;
+                        padding-top: 80px;
+                        padding-bottom: 30px;
+                       span{
+                            margin-bottom: 10px;
+                            display: block;
+                            width: 35px;
+                            height: 4px;
+                            background-color:#cd2026;
+                        }
+                    }
+                    .oneStopService{
+                        h4{
+                            padding-top: 50px;
+                        }
+                        ul{
+                            li{
+                                padding-right: 40px;
+                                height: 100px;
+                                float: left;
+                                line-height: 100px;
+                                font-weight: 700;
+                                &::before{
+                                    content: "";
+                                    display: inline-block;
+                                    width: 10px;
+                                    height: 10px;
+                                    margin-right: 10px;
+                                    border-radius: 3px;
+                                    background-color: #999999;
+                                }
+                            }
+                            &::after{
+                                content: "";
+                                display: block;
+                                clear: both;
+                            } 
+                        }
+                    }
+                    .fieldSurveySettingSupport{
+                        .fieldSurveySettingSupportContent{
+                            margin: 30px 0;
+                            p{
+                                display: inline-block;
+                                margin-right: 50px;
+                                width: 200px;
+                                height: 100px;
+                                border-radius: 10px;
+                                background-color: #5e5e5e;
+                                color: #fff;
+                                font-weight: 700;
+                                text-align: center;
+                                line-height: 100px;
+                                &:last-child{
+                                    margin-left: 50px; 
+                                }
+                            }
+                            span{
+                                position: relative;
+                                display: inline-block;
+                                width: 8px;
+                                height: 8px;
+                                border-radius: 4px;
+                                background-color:  #5e5e5e;
+                                &::before{
+                                    position: absolute;
+                                    top: 0;
+                                    left: -12px;
+                                    content: "";
+                                    display: inline-block;
+                                    width: 8px;
+                                    height: 8px;
+                                    border-radius: 4px;
+                                    background-color:  #5e5e5e;
+                                }
+                                &::after{
+                                    position: absolute;
+                                    top: 0;
+                                    left: 12px;
+                                    content: "";
+                                    display: inline-block;
+                                    width: 8px;
+                                    height: 8px;
+                                    border-radius: 4px;
+                                    background-color: #5e5e5e;
+                                }
+                            }
+                        }
+                    }
+                    .automaticReportCreationFunction{
+                        .automaticReportCreationFunctionContent{
+                            p{
+                                position: relative;
+                                padding-left: 70px;
+                                padding-top: 30px;
+                                padding-bottom: 40px;
+                                padding-right: 70px;
+                                display: inline-block;                                    
+                                font-size: 18px;
+                                font-weight: 700;
+                                &::before{
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 0;
+                                    content: "";
+                                    display: inline-block;
+                                    width: 50px;
+                                    height: 60px;                                       
+                                    background-size: cover;
+                                    background-repeat: no-repeat;
+                                }
+                                &:nth-child(1)::before{
+                                    background-image: url("../images/PDFIcon.png");
+                                }
+                                &:nth-child(2)::before{
+                                    background-image: url("../images/XLSIcon.png");
+                                }
+                            }
+                        }
+                    }
+                    .safetyDiagnosisFunction{
+                        .safetyDiagnosisFunctionContent{
+                            margin-bottom: 150px;
+                            p{
+                                margin: 20px 0 50px 0;
+                            }
+                            ul{
+                                padding: 30px;
+                                background-color: #f2f2f2;
+                                li{
+                                    padding-left: 20px;
+                                    position: relative;
+                                    line-height: 40px;
+                                    &::before{
+                                        position: absolute;
+                                        top: 18px;
+                                        left: 0;
+                                        display: inline-block;
+                                        content: "";
+                                        width: 6px;
+                                        height: 1px;
+                                        background-color: #333333;
+                                    }
+                                    &:first-child{
+                                        font-weight: 700;
+                                        &::before{
+                                            position: absolute;
+                                            top: 15px;
+                                            left: 0;
+                                            width: 0px;
+                                            height: 0px;
+                                            border-top: 5px solid transparent;
+                                            border-left: 10px solid #333333;
+                                            border-bottom: 5px solid transparent;
+                                            background-color: transparent !important;
+                                        }
+                                    }
+                                }
+                            }
+                            .selectionEvaluationCandidateSite{
+                                padding-bottom: 0px;
+                            }
+                        }
+                    }
+                }
+                .compositionDiagram{
+                    padding: 0 0 50px 0;
+                    margin-bottom: 50px;
+                    h3{
+                        font-size: 30px;
+                        color: #B9191F;
+                        margin-bottom: 60px;
+                    } 
+                    img{
+                        display: block;
+                        margin: 0 auto;
+                        width: 100%;
+                    }
+                }
+                .WebGisManagementSystem{
+                    padding: 0 0 50px 0;
+                    margin-bottom: 50px;
+                    h3{
+                        font-size: 30px;
+                        color: #B9191F;
+                        margin-bottom: 40px;
+                    }
+                    p{
+                        font-weight: 700;
+                    }
+                }
+            }                    
+        }   
+    }
+
+     /*----------------------------회사모집--------------------------------------*/
+    .recruitWrap{
+        display: none;
+        .companyRecruit{                     
+            .companyRecruitContent{                        
+                margin: 0 auto;                     
+                width: 1200px;
+                height: auto;                       
+                .recruitWay{
+                    margin-left: -15px;
+                    margin-right: -15px;
+                    line-height: 25px;
+                    &::after{
+                       content:'';
+                       display:block;
+                       clear:both;
+                    }              
+                    li{                                                                
+                        float: left;
+                        width: 33.33333%;                            
+                        .row{
+                            padding: 0 15px;
+                            .col{
+                                position: relative;
+                                padding: 35px 35px 50px 35px;
+                                height: auto;
+                                font-size: 25px;
+                                border-radius: 20px;
+                                background-color: #fff;
+                                box-shadow: 0px 3px 5px #cfcece;  
+                                z-index: 100;
+                                h3{
+                                    position: absolute;
+                                    top: -50px;
+                                    left: 50%;
+                                    margin-left: -50px;
+                                    width: 100px;
+                                    height: 100px;
+                                    background-image: url("../images/recruit_Icon1.png");
+                                    background-size: cover;
+                                    text-indent: -999999px;
+                                }    
+                                p{
+                                    margin-top: 25px;
+                                    height: auto;
+                                    font-size: 16px;
+                                    color: #444444;
+                                    font-weight: 400;
+                                    span{                                            
+                                        display: block;
+                                        margin-bottom: 10px;
+                                        font-size: 20px;
+                                        line-height: 40px;
+                                        font-weight: 700;
+                                        text-align: center;
+                                    }                                   
+                                }
+                            }
+                        }
+                        &:nth-child(2) .row h3{
+                            background-image: url("../images/recruit_Icon2.png");
+                        }
+                        &:nth-child(3) .row h3{
+                            background-image: url("../images/recruit_Icon3.png");
+                        }
+                    }
+                }                        
+            }
+        } 
+    }
+
+    /*----------------------------풋터-------------------------------------*/
+    footer{
+        width: 100%;        
+        background-color: #2A2A2A;
+        font-size: 13px;        
+        .footer{
+            .row{
+                padding:50px 30px;
+                text-align: center;
+                .bot_menu{                    
+                    display:inline-block;
+                    height: 20px;
+                    color:#f9f9f9;
+                    li{
+                        position: relative;
+                        float: left;
+                        padding-right: 10px;
+                        margin-right: 10px;
+                        .brDisplay{
+                            
+                        }
+                        &::before{
+                            display: inline-block;
+                            position: absolute;
+                            top: -1px;
+                            right: -5px;
+                            margin-right: 4px;
+                            content: "|";
+                        }
+                        &:last-child::before{
+                            content: "";
+                        }
+                        a{
+                            display: inline-block;
+                            width: 40px;
+                            height: 20px;
+                            background-color: #cd2026;
+                            color:#fff;
+                            font-weight: 400;
+                            border-radius: 5px;
+                            line-height: 18px;
+                            cursor: pointer;
+                            transition: 0.3s;
+                            &:hover{
+                                background-color: #5e5e5e;
+                            }
+                        }
+                    }
+                }
+                address{
+                    color:#f9f9f9;
+                    line-height: 35px;
+                    font-style:normal;
+                    .corporateName{
+                        color: #cd2026;
+                        font-weight: 700;
+                    }
+                    .businessLicenseNumber{
+                        display: inline-block;
+                        margin-left: 20px;
+                    }
+                }
+                .intRanet{
+                    padding-top: 20px;
+                    a{
+                        display: block;
+                        margin: 0 auto;
+                        width: 100px;
+                        height: 30px;
+                        line-height: 28px;
+                        font-weight: 400;
+                        color:#fff;
+                        border-radius: 5px;
+                        background-color: #cd2026;
+                        transition: 0.3s;
+                        &:hover{
+                            background-color: #5e5e5e;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+/*-----------------미디어--------------------------------*/
+/*---------1220--------*/   
+@media (max-width: 1220px){
+    /*헤더영역*/
+    header{ 
+        //background-color: palevioletred;   
+        .header{
+            width: 100%;
+            .row{
+                padding: 0 70px;                
+            }
+        }
+    }
+    /*메인 이미지 영역*/ 
+    .backgroundImg{               
+        .backgroundImgContent{
+            width: 100%;
+            .mainContentArea{
+                .row{
+                    margin:0 auto;
+                    width: 100%;
+                    .mainIconImgBox{
+                        margin: 0 auto;
+                        width: 1023px;
+                        height: 307px;
+                        .mainIconImg{
+                            width: 1023px;
+                            height: 307px;
+                        }                        
+                    }
+                }               
+            }
+        }        
+    }
+    /*서브메뉴*/
+    .subMenu{
+        width: 100%;
+        .subMenuContainer{
+            width: 100% !important;
+            .row{
+            }
+        }
+    }
+    /*회사소개*/
+    .contentWrap{        
+        .contentContainer{
+            width: 100% !important;
+            >.row{
+                padding: 0 40px;            
+                .companyOverviewContent{/*회사개요*/
+                    margin: 0 auto;
+                    width: 970px;
+                    img{
+                        width: 500px;
+                        height: 333px;
+                    }
+                    p{
+                        width: 400px;
+                    }
+                }
+                .companyVisionContent{/*회사비젼*/
+                    margin: 0 auto;
+                    width: 970px;
+                    img{
+                        width: 600px;
+                        height: 568px;
+                    }
+                }
+                .companyContactUsContent{/*회사연락*/
+                    margin: 0 auto;
+                    width: 970px;
+
+                }
+            }
+        }
+    }
+    /*회사연혁*/
+    .historyWrap{
+        .companyHistoryContent{
+            width: 100% !important;
+            .historyList{
+               .historyListContent{                   
+                   .postedDate{
+                       .backNum{
+                           top: -150px !important;
+                           font-size: 180px !important;
+                       }
+                   }
+                   .monthTable{
+                       .monthList{
+                           dl{
+                               dd{
+                                   font-size: 13px !important;
+                               }
+                           }
+                       }
+                   }
+               } 
+            }
+        }
+    }
+    /*사업분야*/
+    .businessFieldWrap{
+        .contentContainer{
+            /*모바일 홈 네트워크 서비스*/            
+            .mobileHomeNetworkContent{
+                width: 100% !important;
+                .description{
+                    p{
+                        padding: 90px 100px 0 100px;
+                    }
+                }
+                .row{
+                    .mobileHomeNetworkWay{
+                        .homeNetworList{
+                            &:nth-child(1){
+                                width: 41%;
+                            }
+                            &:nth-child(2){
+                                width: 41%;
+                            }               
+                        }
+                        
+                    }
+                }
+            }
+             /*모바일 소프트웨어 개발*/       
+             .mobileSoftwareContent{
+                width: 100% !important;
+                .description{
+                    p{
+                        padding: 90px 100px 0 100px;
+                    }
+                }
+                .row{
+                    padding: 0 30px;
+                    .mobileSoftwareWay{
+                        .softwarList{
+                            &:nth-child(1){
+                                width: 41%;
+                            }
+                            &:nth-child(2){
+                                width: 41%;
+                            }               
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+
+    /*솔루션*/
+    .solutionWrap{        
+        .contentWrap{
+            width: 100% !important;
+            .contentContainer{
+                .row{            
+                    .mobileHomeNetSolution{/*모바일 홈 네크워크 솔루션*/
+                        .mobileHomeNetSolutionContent{
+                            width: 100%;
+                            .solutionFunction{
+                                .marginBox{
+                                    margin-right: 50px;
+                                }
+                            }
+                        }
+                    }
+                    .smartCamSolution{/*스마트 캠 솔루션*/
+                        .smartCamSolutionContent{
+                            width: 100%;
+                            .compositionDiagram{
+                                .compositionDiagramText{
+                                    ul{
+                                        li{
+                                            width: 47%;
+                                            height: 336px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .smartPublicFacilitiesFieldSurveySafetyDiagnosis{/*스마트 공공시설 현장조사/안전진단 솔루션*/
+                        .smartPublicFacilitiesFieldSurveySafetyDiagnosisContent{
+                            width: 100%;
+                        }
+                    }                    
+                }
+            }
+        }
+    }
+
+    /*회사모집*/
+    .recruitWrap{
+        .companyRecruitContent{            
+            width: 100% !important;
+            .recruitWay{
+                padding: 30px 0;
+                margin : 0;
+            }
+        }
+    }
+}
+
+/*---------1024--------*/
+
+@media (max-width: 1024px){
+    /*헤더영역*/
+    header{
+        //ackground-color: powderblue;       
+    }
+
+    .articleTitle{/*공통 섹션타이틀*/
+        font-size: 40px !important;
+        &::after{
+            width: 150px !important;
+            height: 3px !important;
+        }
+    }
+
+    .backgroundImg{
+        /*메인 이미지 영역*/
+        .backgroundImgContent{            
+            .mainContentArea{
+                .row{
+                    .mainIconImgBox{
+                        width: 960px;
+                        height: 288px;
+                        .mainIconImg{
+                            width: 960px;
+                            height: 288px;
+                        }                        
+                    }
+                }        
+            }
+        }        
+    }
+
+    /*회사소개*/
+    .contentWrap{        
+        .contentContainer{
+            .row{            
+                .companyOverviewContent{/*회사개요*/
+                    width: 900px;
+                    img{
+                        width: 450px;
+                        height: 300px;
+                    }
+                }
+                .companyVisionContent{/*회사비젼*/
+                    width: 900px;
+                    img{
+                        width: 550px;
+                        height: 494px;
+                    }
+                }
+                .companyContactUsContent{/*회사연락*/
+                    width: 900px;
+
+                }
+            }
+        }
+    }
+
+    /*사업분야*/
+    .businessFieldWrap{
+        .contentContainer{
+            /*모바일 홈 네트워크 서비스*/            
+            .mobileHomeNetworkContent{
+                .description{
+                    p{
+                        padding-top: 80px;
+                    }
+                }
+                .row{
+                    .mobileHomeNetworkWay{
+                        .homeNetworList{
+                            &:nth-child(1){
+                                width: 40%;
+                            }
+                            &:nth-child(2){
+                                width: 40%;
+                            }               
+                        }
+                        
+                    }
+                }
+            }
+            /*모바일 소프트웨어 개발*/       
+            .mobileSoftwareContent{
+                .description{
+                    p{
+                        padding-top: 80px;
+                    }
+                }
+                .row{
+                    .mobileSoftwareWay{
+                        .softwarList{
+                            &:nth-child(1){
+                                width: 40%;
+                            }
+                            &:nth-child(2){
+                                width: 40%;
+                            }               
+                        }
+                        
+                    }
+                }
+            }           
+        }
+    }
+    
+}
+
+/*---------960--------*/   
+@media (max-width: 960px){
+
+    /*헤더영역*/
+    header{
+        //background-color: peachpuff;
+    }
+    .backgroundImg{
+       /* height: 800px;  --메뉴 픽시드 높이 않맞음.*/
+        .backgroundImgContent{
+            .mainContentArea{
+                .row{
+                    .mainIconImgBox{
+                        width: 768px;
+                        height: 230px;
+                        .mainIconImg{
+                            width: 768px;
+                            height: 230px;
+                        }                        
+                    }
+                }        
+            }
+        }
+    }
+    /*회사소개*/
+    .contentWrap{
+        height: auto;
+        padding-bottom: 100px;    
+        .contentContainer{
+            .row{                           
+                .companyOverviewContent{/*회사개요*/
+                    display: block;
+                    width: 100%;
+                    height: auto;                    
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+                    p{
+                        width: 100%;
+                    }
+                }
+                .companyVisionContent{/*회사비젼*/
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    height: 1150px;
+                    .visionList{
+                        position: absolute;
+                        top: 550px;
+                        left: 50%;
+                        margin-left: -180px;
+                        width: 360px;
+                    }
+                    img{
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        margin-left: -275px;
+                        width: 550px;
+                        height: 494px;                        
+                    }
+                }
+                .companyContactUsContent{/*회사연락*/
+                    width: 100%;
+
+                }
+            }
+        }
+    }
+
+    /*회사연혁*/
+    .historyWrap{
+        .companyHistoryContent{
+            .historyList{
+               .historyListContent{                   
+                   .postedDate{
+                        position : inherit !important;
+                        width: 100% !important;
+                        margin-top: 0 !important;
+                       .backNum{
+                           display: none;
+                       }
+                       .year{
+                        position : inherit !important;
+                        width: 100% !important;
+                       }
+                   }
+                   .monthTable{
+                       float: left !important;
+                       width: 100% !important;
+                   }
+               } 
+            }
+        }
+    }
+    
+    /*사업분야*/
+    .businessFieldWrap{
+        .contentContainer{
+            /*모바일 홈 네트워크 서비스*/
+            .mobileHomeNetwork{
+                .titleContainer{
+                    margin-bottom: 63px;
+                    .articleTitle{
+                        &::after{
+                            margin-top: 40px;
+                        }
+                        span{
+                            display: block;
+                            line-height: 30px;
+                        }
+                    }
+                }
+                .mobileHomeNetworkContent{
+                    .description{
+                        p{
+                            font-size: 18px;
+                            padding-top: 70px;
+                        }
+                    }
+                    .row{
+                        padding: 0;
+                        .mobileHomeNetworkWay{
+                            .homeNetworList{
+                                padding: 0px;
+                                .homeNetworListContent{
+                                    padding: 40px;
+                                }
+                                &:nth-child(1){
+                                    width: 100%;
+                                    height: 272px;                              
+                                }
+                                &:nth-child(2){
+                                    margin-top: 0px;
+                                    width: 100%;
+                                    height: 272px;
+                                }               
+                            }                        
+                        }
+                    }
+                }
+            }        
+
+            /*모바일 소프트웨어 개발*/
+            .mobileSoftware{
+                .titleContainer{
+                    margin-bottom: 63px;
+                    .articleTitle{
+                        &::after{
+                            margin-top: 40px;
+                        }
+                        span{
+                            display: block;
+                            line-height: 30px;
+                        }
+                    }
+                }
+                .mobileSoftwareContent{
+                    .description{
+                        p{
+                            font-size: 18px;
+                            padding-top: 70px;
+                        }
+                    }
+                    .row{
+                        padding: 0;
+                        .mobileSoftwareWay{
+                            .softwarList{
+                                padding: 0;
+                                .softwarListContent{
+                                    padding: 40px;
+                                }
+                                &:nth-child(1){
+                                    width: 100%;
+                                    height: 272px;
+                                }
+                                &:nth-child(2){
+                                    margin-top: 0px;
+                                    width: 100%;
+                                    height: 272px;
+                                }               
+                            }
+                            
+                        }
+                    }
+                }
+            }       
+        }
+    }
+
+    /*솔루션*/
+    .solutionWrap{        
+        .contentWrap{
+            .contentContainer{
+                .row{
+                    h3{
+                        font-size: 25px;
+                    }           
+                    .mobileHomeNetSolution{/*모바일 홈 네크워크 솔루션*/
+                        .titleContainer{
+                            margin-bottom: 63px;
+                            .articleTitle{
+                                &::after{
+                                    margin-top: 40px;
+                                }
+                                span{
+                                    display: block;
+                                    line-height: 30px;
+                                }
+                            }
+                        }
+                        .mobileHomeNetSolutionContent{
+                            .solutionFunction{
+                                ul{
+                                    li{
+                                        .marginBox{
+                                            margin-right: 0;
+                                            .functionTitel{
+                                            }
+                                        }
+                                        &:nth-child(1), &:nth-child(3){
+                                            .marginBox{
+                                                padding-right: 25px;
+                                            }
+                                        }
+                                        &:nth-child(2), &:nth-child(4){
+                                            .marginBox{
+                                                padding-left: 25px;
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .smartCamSolution{/*스마트 캠 솔루션*/
+                        .smartCamSolutionContent{
+                            .compositionDiagram{
+                                .compositionDiagramText{
+                                    ul{
+                                        li{
+                                            width: 46%;
+                                            height: 350px;
+                                            .description{
+                                                height: 100px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .solutionFunction{
+                                table{
+                                    .tableW{
+                                        width: 200px;
+                                    }
+                                    .vam{
+                                        width: 250px;
+                                    }
+                                }
+                            }
+                            .applicationField{
+                               ul{
+                                   li{
+                                       width: 100%;
+                                       span{
+                                           display: inline-block;
+                                       }
+                                   }
+                               }
+                            }
+                        }
+                    }
+                    .smartPublicFacilitiesFieldSurveySafetyDiagnosis{/*스마트 공공시설 현장조사 안전진단 솔루션*/
+                        .titleContainer{
+                            margin-bottom: 63px;
+                            .articleTitle{
+                                &::after{
+                                    margin-top: 40px;
+                                }
+                                span{
+                                    display: block;
+                                    line-height: 30px;
+                                }
+                            }
+                        }
+                    }    
+                }
+            }
+        }
+    }
+
+    /*회사모집*/
+    .recruitWay{
+        li{
+            display: block !important;
+            width: 100% !important;
+            margin-bottom: 100px;             
+        }
+    }
+ 
+    footer{
+        .bot_menu{
+            margin-bottom: 20px;                    
+            li{
+                height: 20px;                
+                &:nth-child(3){
+                    clear: both;
+                }
+            }
+        }
+
+    }
+
+}
+
+/*-------------------테블릿 모바일----------------------*/
+
+/*---------768--------*/
+@media (min-width: 768px){/*min-width 모바일 메뉴사라짐 CSS*/
+    .mainMenu{
+        display: block;                      
+    }
+    .mobileMainMenu{
+        display: none;  
+    }
+}   
+@media (max-width: 768px){
+    header{
+        position: fixed !important;
+        padding: 10px 0 20px 0 ;
+        height: 40px;
+        background-color: #fff;
+        border-bottom: 1px solid #e6e6e6;
+        .header{
+            .row{
+                position: relative;
+                padding: 0;
+                .logo{
+                    display: block;
+                    margin-left: 20px;
+                    width: 60px;
+                    height: 50px;
+                    line-height: 0px;
+                    background-image: url("../images/logo.png");
+                    background-size: cover;
+                }
+                 /*메인메뉴*/
+                .mainNav{                                  
+                    margin-top: 10px;      
+                    width: 100%;             
+                    .mainMenu{
+                        display: none;                      
+                    }
+                    .mobileMainMenu{
+                        .mobileSubMenu{
+                            background-color: #cd2026;
+                            li{
+                                a{
+                                    span{
+                                        position: relative;
+                                        -webkit-backface-visibility:hidden;
+                                        backface-visibility:hidden;
+                                        transition:0.5s color ease;
+                                        color:#fff;
+                                        font-size: 15px;
+                                        &::after{
+                                            position:absolute;
+                                            content: "";
+                                            transition:0.5s all ease;
+                                            left:50%;
+                                            -webkit-transform:translateX(-50%);
+                                            transform:translateX(-50%);
+                                            bottom: -5px;
+                                            height:2px;
+                                            -ms-height:3px;
+                                            width:0;
+                                            background:#fff;
+                                        } 
+                                        &:hover::after{                            
+                                            width:100%; 
+                                        }                          
+                                    }
+                                }
+                            }
+                        }
+                    }       
+                }
+                .mobileMenuIcon{
+                    display: block;
+                    position: absolute;
+                    top: 5px;
+                    right: 35px;
+                    cursor: pointer;
+                    .menu-trigger{
+                        position: relative;
+                        display: inline-block;
+                        width: 40px;
+                        height: 36px;                       
+                        transition: all .4s;
+                        box-sizing: border-box;
+                        span{
+                            position: absolute;
+                            left: 0;
+                            display: inline-block;
+                            width: 100%;
+                            height: 5px;
+                            background-color: #cd2026;
+                            border-radius: 4px;                            
+                            transition: all .4s;
+                            box-sizing: border-box;
+                            &:nth-of-type(1){
+                                top: 0;
+                            }
+                            &:nth-of-type(2){
+                                top: 16px;
+                            }
+                            &:nth-of-type(3){
+                                bottom: 0;
+                            }
+                        }                        
+                    }
+                    .menu-trigger.active-1{
+                        span{
+                            &:nth-of-type(1){
+                                -webkit-transform: translateY (16px) rotate (-45deg);
+                                transform: translateY(16px) rotate(-45deg);
+                            }
+                            &:nth-of-type(2){
+                                opacity: 0;
+                            }
+                            &:nth-of-type(3){
+                                -webkit-transform: translateY(-16px) rotate(45deg);
+                                transform: translateY(-16px) rotate(45deg);
+                            }
+                        }
+                    }                      
+                }   
+            }
+        }    
+    }
+
+    /*메인이미지영역*/
+    .backgroundImg{
+        height: 750px;
+        .backgroundImgContent{
+            .mainContentArea{
+                display: block;
+                padding: 120px 0;
+                margin: 0 auto;
+                width: 100%;
+                height: 320px;
+                .row{
+                    .mainIconImgBox{
+                        width: 576px;
+                        height: 173px;
+                        .mainIconImg{
+                            width: 576px;
+                            height: 173px;
+                        }                        
+                    } 
+                    .mainTextBox{
+                        display:block;
+                        padding-top: 48px;
+                        margin: 0;
+                        width: 100%;
+                        height: 277px;/*335*/
+                        text-align: center;
+                        //background-color:black;
+                        h1{
+                            font-size: 38.5px;
+                            .software{
+                                font-size: 55px;
+                            }
+                        }
+                        p{
+                            margin-right: 0;
+                            font-size: 20px;
+                            line-height: 70px;
+                            text-align: center !important;
+                        }
+                    }
+                }        
+            }
+        }
+    }
+    .subMenuWrap{
+        display: none;
+    }
+    /*공통 섹션타이틀*/
+    .titleContainer{
+        padding: 105px 0 0px 0 !important;
+        margin-bottom: 30px;
+        height: 80px !important;
+        .articleTitle{
+            height: 60px;
+            line-height: 60px !important;
+            font-size: 30px !important;
+            font-weight: 900 !important;
+            &::after{
+                width: 100px;
+                height: 3px !important;
+            }
+        }
+    }
+
+    /*회사소개*/
+    .contentWrap{
+        .contentContainer{
+            >.row{
+                padding: 0 20px !important;            
+                .companyOverviewContent{/*회사개요*/               
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+                    p{
+                        padding-top: 100px !important;
+                        width: 100%;
+                        height: auto;
+                        font-size: 15px;
+                        line-height: 30px;
+                        span{
+                            font-size: 25px !important;
+                        }
+                    }
+                }
+                .companyVisionContent{/*회사비젼*/
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    height: 620px;
+                    .visionList{
+                        position: absolute;
+                        top: 300px;
+                        left: 50%;
+                        margin-left: -150px;
+                        width: 300px;
+                        li{
+                            font-size: 20px;
+                            &::before{
+                                width: 5px;
+                                height: 5px;
+                                border-radius: 2.5px;
+                            }
+                            p{
+                                margin: 20px 0 30px 20px;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                    img{
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        margin-left: -150px;
+                        width: 300px;
+                        height: 269px;                        
+                    }
+                }
+                .companyContactUsContent{/*회사연락*/
+                    width: 100%;
+                    .directions{
+                        li{
+                            p{
+                                font-size: 15px;
+                            }
+                            span{
+                                left: 40px;
+                                font-size: 18px;
+
+                                i{
+                                    font-size: 25px;
+                                }
+                            }
+                        }
+                    }
+
+                } 
+            }
+        }
+        .Contact{
+            p{
+                font-size: 15px;
+                line-height: 30px;
+            }
+        }
+    }
+
+    /*회사연혁*/
+    .historyWrap{
+        .companyHistoryContent{
+            .historyList{
+                padding: 0;
+               .historyListContent{ 
+                &:first-child {
+                    padding: 0 !important;
+                }                             
+                   .postedDate{
+                       .year{
+                        font-size: 30px !important;
+                       }
+                   }
+                   .monthTable{
+                       float: left !important;
+                       width: 100% !important;
+                       .monthList{
+                           dl{
+                               line-height: 25px !important;
+                               .month{
+                                   margin-right: 12px !important;
+                                   font-size: 17px !important;
+                               }
+                               dd{
+                                   clear: both;
+                                   font-size: 15px !important;
+                               }
+                           }
+                       }
+                   }
+               } 
+            }
+        }
+    }
+    
+    /*사업분야*/
+    .businessFieldWrap{
+        .contentContainer{
+            /*모바일 홈 네트워크 서비스*/
+            .mobileHomeNetwork{
+                .titleContainer{
+                    height: 98px !important;
+                    .articleTitle{
+                        &::after{
+                            margin-top: 20px;
+                        }
+                    }
+                }
+                .mobileHomeNetworkContent{
+                    .description{
+                        p{
+                            padding: 50px 70px 0px 70px;
+                        }
+                    }
+                    .row{
+                        padding: 0;
+                        .mobileHomeNetworkWay{
+                            .homeNetworList{
+                                padding: 0px;
+                                &:nth-child(1){
+                                    width: 100%;
+                                    height: 284px;                              
+                                }
+                                &:nth-child(2){
+                                    margin-top: 0px;
+                                    width: 100%;
+                                    height: 284px;
+                                }
+                                .homeNetworListContent{
+                                    h3{
+                                       font-size: 20px;
+                                    }
+                                    .developmentItem{ /*개발항목*/
+                                        li{
+                                            font-size: 15px;
+                                        }
+                                    }
+                                    .developmentEnvironment{ /*개발환경*/
+                                        li{
+                                            font-size: 15px;
+                                        }
+                                    }                            
+                                    .reference{ /*주요 레퍼런스*/
+                                        li{
+                                            font-size: 15px;
+                                        }
+                                    }
+                                }               
+                            }                        
+                        }
+                    }
+                }
+            }          
+            /*모바일 소프트웨어 개발*/
+            .mobileSoftware{
+                .titleContainer{
+                    height: 98px !important;
+                    .articleTitle{
+                        &::after{
+                            margin-top: 20px;
+                        }
+                    }
+                }
+                .mobileSoftwareContent{
+                    .description{
+                        p{
+                            padding: 70px 70px 0px 70px;
+                        }
+                    }
+                    .row{
+                        padding: 0;
+                        .mobileSoftwareWay{
+                            .softwarList{
+                                padding: 0;
+                                &:nth-child(1){
+                                    width: 100%;
+                                    height: 284px;
+                                }
+                                &:nth-child(2){
+                                    margin-top: 0px;
+                                    width: 100%;
+                                    height: 284px;
+                                }
+                                .softwarListContent{
+                                    h3{
+                                       font-size: 20px;
+                                    }
+                                    .developmentItem{ /*개발항목*/
+                                        li{
+                                            font-size: 15px;
+                                        }
+                                    }
+                                    .developmentEnvironment{ /*개발환경*/
+                                        li{
+                                            font-size: 15px;
+                                        }
+                                    }                            
+                                    .reference{ /*주요 레퍼런스*/
+                                        li{
+                                            font-size: 15px;
+                                        }
+                                    }
+                                }              
+                            }                        
+                        }
+                    }
+                }
+            }      
+        }
+    }
+
+    /*솔루션*/
+    .solutionWrap{        
+        .contentWrap{
+            .contentContainer{
+                .row{
+                    h3{
+                        font-size: 25px;
+                    }           
+                    .mobileHomeNetSolution{/*모바일 홈 네크워크 솔루션*/
+                        .titleContainer{
+                            height: 98px !important;
+                            .articleTitle{
+                                &::after{
+                                    margin-top: 20px;
+                                }
+                            }
+                        }
+                        .mobileHomeNetSolutionContent{
+                            .solutionOutline{
+                                ul{
+                                    li{
+                                        font-size: 15px;
+                                    }
+                                }
+                            }
+                            .solutionFunction{
+                                ul{
+                                    li{
+                                        width: 100%;
+                                        font-size: 15px;
+
+                                        &:nth-child(1), &:nth-child(3){
+                                            .marginBox{
+                                                padding-right: 0;
+                                            }
+                                        }
+                                        &:nth-child(2), &:nth-child(4){
+                                            .marginBox{
+                                                padding-left: 0;
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .smartCamSolution{/*스마트 캠 솔루션*/
+                        .smartCamSolutionContent{
+                            .applicationSpecifications{
+                                ul{
+                                    li{
+                                        width: 50%;
+                                        .contentBoxCol{
+
+                                            .applicationSpecificationsTitle{
+                                                font-size: 18px;
+                                            }
+                                            span{
+                                                font-size: 15px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .compositionDiagram{
+                                .compositionDiagramText{
+                                    ul{
+                                        li{
+                                            width: 100%;
+                                            &:nth-child(1){
+                                                margin-right: 0;
+                                                margin-bottom: 30px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .solutionFunction{
+                                .table-container{
+                                    table{
+                                        font-size: 15px;
+                                    }
+                                }
+                            }
+                            .applicationField{
+                               ul{
+                                   li{
+                                       width: 100%;
+                                       h4{
+                                           padding-left: 80px;
+                                           &::before{
+                                                width: 70px;
+                                                height: 70px;                                                
+                                           }
+                                       }
+                                       span{
+                                           display: inline;
+                                       }
+                                   }
+                               }
+                            }
+                        }
+                    }
+                    .smartPublicFacilitiesFieldSurveySafetyDiagnosis{/*스마트 공공시설 현장조사/안전진단 솔루션*/
+                        .titleContainer{
+                            height: 98px !important;
+                            .articleTitle{
+                                &::after{
+                                    margin-top: 20px;
+                                }
+                            }
+                        }
+                        .smartPublicFacilitiesFieldSurveySafetyDiagnosisContent{
+                            .bigTopicContent{
+                                .oneStopService{
+                                    ul{
+                                        li{
+                                            position: relative;
+                                            width: 50%;
+                                            padding-right: 0;
+                                            font-size: 15px;
+                                            span{
+                                                position: absolute;
+                                                display: block;
+                                                top: 28px;
+                                                left: 20px;
+                                            }
+                                        }
+                                    }
+                                }
+                                .automaticReportCreationFunction{
+                                    .automaticReportCreationFunctionContent{/*보고서 자동작성기능*/
+                                        p{
+                                            margin-top: 30px;
+                                            font-size: 15px;
+                                        }
+                                    }
+                                    .safetyDiagnosisFunction{/*안전진단기능*/
+                                        .safetyDiagnosisFunctionContent{
+                                            p{
+                                                font-size: 15px;
+                                            }
+                                            ul{
+                                                li{
+                                                    font-size: 15px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }                                
+                            }
+                        }
+                    }                    
+                }
+            }
+        }
+    }
+
+    footer{
+        .bot_menu{
+            margin-bottom: 50px;                    
+            li{
+                height: 20px;
+                line-height: 20px !important;           
+                &:nth-child(3),&:nth-child(4){
+                    display: block;
+                    clear: both;
+                }
+                &:last-child{
+                    margin-top: 22px;
+                }
+                .brDisplay{
+                    display:block !important;
+                    margin-top: 1px;
+                    text-align-last: left;
+                }
+            }
+        }
+        address{
+            margin-top: 20px;
+            line-height: 15px;
+        }
+    }
+}
+
+/*---------576--------*/   
+@media (max-width: 576px){
+
+    .backgroundImg{
+        .backgroundImgContent{
+            .mainContentArea{
+                .row{
+                    .mainIconImgBox{
+                        width: 300px;
+                        height: 90px;
+                        .mainIconImg{
+                            width: 300px;
+                            height: 90px;
+                        }                        
+                    } 
+                    .mainTextBox{
+                        display:block;
+                        padding-top: 42px;
+                        margin: 0;
+                        width: 100%;
+                        height: 220px;/*335*/
+                        text-align: center;
+                        //background-color:black;
+                        h1{
+                            font-size: 25px;
+                            .software{
+                                font-size: 35px;
+                            }
+                        }
+                        p{
+                            margin-right: 0;
+                            font-size: 16px;
+                            line-height: 70px;
+                            text-align: center !important;
+                        }
+                    }
+                }
+            }
+        }
+             
+    }
+    
+    /*회사소개*/
+    .contentWrap{
+        .contentContainer{
+            .row{
+                padding: 0 40px;            
+                .companyOverviewContent{/*회사개요*/               
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+                    p{
+                        padding-top: 50px;
+                        width: 100%;
+                    }
+                } 
+            }
+        }
+    }
+
+    /*사업분야*/
+    .businessFieldWrap{
+        .contentContainer{
+            /*모바일 홈 네트워크 서비스*/            
+            .mobileHomeNetworkContent{
+                .description{
+                    p{
+                        padding: 55px 10px 0px 10px !important;
+                        font-size: 16px !important;
+                    }
+                }
+                .row{
+                    .mobileHomeNetworkWay{
+                        .homeNetworList{
+                            .homeNetworListContent{
+                                padding: 40px 25px !important;
+                            }           
+                        }                        
+                    }
+                }
+            }
+            /*모바일 소프트웨어 개발*/       
+            .mobileSoftwareContent{
+                .description{
+                    p{
+                        padding: 55px 10px 0px 10px !important;
+                        font-size: 16px !important;
+                    }
+                }
+                .row{
+                    .mobileSoftwareWay{
+                        .softwarList{
+                            .softwarListContent{
+                                padding: 40px 25px !important;
+                            }             
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+
+        /*솔루션*/
+        .solutionWrap{        
+            .contentWrap{
+                .contentContainer{
+                    .row{
+                        h3{
+                            font-size: 25px;
+                        }           
+                        .mobileHomeNetSolution{/*모바일 홈 네크워크 솔루션*/
+                            .mobileHomeNetSolutionContent{
+                                .solutionOutline{
+                                    ul{
+                                        padding: 50px 25px;
+                                    }
+                                }
+                            }
+                        }
+                        .smartCamSolution{/*스마트 캠 솔루션*/
+                            .smartCamSolutionContent{
+                                .solutionOutline{
+                                    ul{
+                                        padding: 50px 25px;
+                                    }
+                                }
+                                .applicationSpecifications{
+                                    ul{
+                                        li{
+                                            .contentBoxCol{
+                                                padding: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                                .solutionFunction{
+                                    table{
+                                        tbody{
+                                            span{
+                                                display: block;
+                                            }
+                                            .vam{
+                                                width: 150px;
+    
+                                            }
+                                            td{
+                                                padding: 10px 5px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .smartPublicFacilitiesFieldSurveySafetyDiagnosis{/*스마트 공공시설 현장조사/안전진단 솔루션*/
+                            .smartPublicFacilitiesFieldSurveySafetyDiagnosisContent{
+                                .bigTopicContent{
+                                    .automaticReportCreationFunction{
+                                        .safetyDiagnosisFunction{/*안전진단기능*/
+                                            .safetyDiagnosisFunctionContent{
+                                                ul{
+                                                    padding: 30px 25px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .WebGisManagementSystem{/*WEB GIS 관리시스템*/
+                                        p{
+                                            font-size: 15px;
+                                        }
+                                    }                               
+                                }
+                            }
+                        }                    
+                    }
+                }
+            }
+        }
+
+    footer{
+        .bot_menu{
+            margin-bottom: 50px;                    
+            li{
+                height: 20px;                
+                &:nth-child(3),&:nth-child(4){
+                    display: block;
+                    clear: both;
+                }
+            }
+        }
+    }
+}
+
+}
